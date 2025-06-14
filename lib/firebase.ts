@@ -21,9 +21,9 @@ const isFirebaseConfigured =
   process.env.NEXT_PUBLIC_FIREBASE_API_KEY !== "demo-key" &&
   process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID !== "demo-project"
 
-let app: FirebaseApp
-let auth: Auth
-let db: Firestore
+let app: FirebaseApp 
+let auth: Auth 
+let db: Firestore 
 let storage: FirebaseStorage
 
 // Initialize Firebase only if properly configured
@@ -47,5 +47,5 @@ if (isFirebaseConfigured) {
 }
 
 // Export services with proper typing
-export { auth, db, storage, isFirebaseConfigured }
-export default app
+export { app, auth, db, storage, isFirebaseConfigured }
+

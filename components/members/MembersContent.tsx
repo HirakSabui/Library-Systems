@@ -4,8 +4,8 @@ import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Search, Users, Mail, Calendar } from "lucide-react"
-import { memberOperations, type Member } from "@/lib/supabase"
 import { useToast } from "@/hooks/use-toast"
+import { Member, memberOperations } from "@/lib/firestore"
 
 export function MembersContent() {
   const { toast } = useToast()
@@ -91,7 +91,7 @@ export function MembersContent() {
             <CardContent className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Calendar className="h-4 w-4" />
-                <span>Joined {new Date(member.joined_at).toLocaleDateString()}</span>
+                <span>Joined {member.joinedAt.toDate().toLocaleDateString()}</span>
               </div>
             </CardContent>
           </Card>
